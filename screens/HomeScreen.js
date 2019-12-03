@@ -7,9 +7,11 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Button,
 } from 'react-native';
 import { WebBrowser } from 'expo';
-
+//import Campings from '../screens/Campings';
+import 'react-native-gesture-handler';
 import { MonoText } from '../components/StyledText';
 
 export default class HomeScreen extends React.Component {
@@ -19,6 +21,11 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return (
+     
+
+
+
+
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
@@ -46,19 +53,24 @@ export default class HomeScreen extends React.Component {
             </Text>
           </View>
 
+
+
           <View style={styles.helpContainer}>
             <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
               <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>
-
+   
         <View style={styles.tabBarInfoContainer}>
           <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
 
           <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
             <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
           </View>
+          <View>
+      <Button title="Campings" onPress={() => this.props.navigation.navigate('Campings')}/>
+ </View>
         </View>
       </View>
     );

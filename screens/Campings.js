@@ -9,10 +9,16 @@ import {
   View,
   Dimensions,
   SafeAreaView,
+  Button,
 } from 'react-native';
 import { connect } from 'react-redux';
 import { MapView } from 'expo';
 import { Ionicons, FontAwesome, Foundation, SimpleLineIcons } from '@expo/vector-icons';
+// import Campings from '../screens/Campings';
+import Settings from '../screens/Settings';
+import HomeScreen from '../screens/HomeScreen';
+import LinksScreen from '../screens/LinksScreen';
+import 'react-native-gesture-handler';
 
 import { setLocation, setFilters, setCampings } from '../modules/campings';
 import * as mock from '../mock/campings';
@@ -164,6 +170,8 @@ class Campings extends React.Component {
     )
   }
 
+  
+
   renderList() {
     const { filters, campings } = this.props;
     const mapSpots = filters.type === 'all' ? campings
@@ -222,9 +230,12 @@ class Campings extends React.Component {
           {this.renderMap()}
        
         </ScrollView>
-  
+        <View>
+          <Button title="Home" onPress={() => this.props.navigation.navigate('HomeScreen')}/>
+          <Button title="LinksScreen" onPress={() => this.props.navigation.navigate('LinksScreen')}/>
+        </View>
       </SafeAreaView>
-    
+   
     );
   }
 }

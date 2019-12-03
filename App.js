@@ -6,6 +6,7 @@ import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
 import AppNavigator from './navigation/AppNavigator';
 
+
 import store from './modules';
 
 export default class App extends React.Component {
