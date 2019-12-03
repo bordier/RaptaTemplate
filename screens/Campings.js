@@ -79,7 +79,7 @@ class Campings extends React.Component {
     return (
       <View style={styles.map}>
         <MapView
-          style={{ flex: 1, height: height * 0.5, width }}
+          style={{ flex: 1, height: height * 1, width }}
           showsMyLocationButton
           initialRegion={{
             latitude: 37.78825,
@@ -207,7 +207,9 @@ class Campings extends React.Component {
             <View style={{ flex: 0.2, justifyContent: 'center' }}>
               <SimpleLineIcons name="options-vertical" color="#A5A5A5" size={24} />
             </View>
+             
           </View>
+   
         )
       })
   }
@@ -218,9 +220,11 @@ class Campings extends React.Component {
         {this.renderHeader()}
         <ScrollView style={styles.container}>
           {this.renderMap()}
-          {this.renderList()}
+       
         </ScrollView>
+  
       </SafeAreaView>
+    
     );
   }
 }
@@ -337,6 +341,7 @@ const styles = StyleSheet.create({
     height: width * 0.25,
     borderRadius: 6,
   },
+  
   myMarker: {
     zIndex: 2,
     width: 60,

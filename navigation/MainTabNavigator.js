@@ -12,7 +12,7 @@ const HomeStack = createStackNavigator({
 });
 
 HomeStack.navigationOptions = {
-  tabBarLabel: 'Homee',
+  tabBarLabel: 'Profil',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -53,8 +53,17 @@ SettingsStack.navigationOptions = {
   ),
 };
 
+const tabNavigator = createBottomTabNavigator({
+  HomeStack,
+ 
+
+
+  
+});
+
 export default createBottomTabNavigator({
   HomeStack,
   LinksStack,
   SettingsStack,
 });
+export default tabNavigator;
